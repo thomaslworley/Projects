@@ -6,7 +6,7 @@ client = commands.Bot(command_prefix= '/')
 @client.event
 async def on_ready():
     print('Up and running')
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.streaming, name="Visual Basic Code"))
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.streaming, name="Visual Studio Code"))
 
 global auth_check
 auth_check = False
