@@ -1,7 +1,10 @@
-import discord, random, api
+import discord
 from discord.ext import commands
+import api
 
-client = commands.Bot(command_prefix= '/')
+intents= discord.Intents.default()
+
+client = commands.Bot(intents=intents, command_prefix= '/')
 
 @client.event
 async def on_ready():
