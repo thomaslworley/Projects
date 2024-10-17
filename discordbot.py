@@ -7,7 +7,7 @@ import api
 
 def main():
     """Main function just to run the bot and the events it will handle and commands to execute"""
-    intents = discord.Intents.default()
+    intents = discord.Intents.all()
     client = commands.Bot(command_prefix='!', intents=intents)
 
     log_channel = 1296240616685961237
@@ -20,6 +20,12 @@ def main():
         channel = client.get_channel(log_channel)
         await client.change_presence(status=online, activity=custom(name='Currently being Wacky!'))
         await channel.send('Bot is running!')
+
+    @client.command()
+    async def commandhelp(ctx):
+        names = [command.name for command in client.commands]
+        clean = '\n '.join(names)
+        await ctx.send(f'```Below is a list of commands:\n {clean}```')
 
 
     client.run(api.Key)
