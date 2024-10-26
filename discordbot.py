@@ -30,7 +30,9 @@ def main():
     @client.command()
     async def gitcode(ctx):
         link = 'https://github.com/thomaslworley/Projects'
-        await ctx.send(f'```Below the is link to the public GitHub Repo that contains the code for the bot\nThe file name is under discordbot.py\n{link} ```')
+        await ctx.send('```Below the is link to the public GitHub Repo that contains the code for the bot\nThe file name is under discordbot.py ```')
+        await ctx.send(link)
+    
     client.run(api.Key)
 
 
